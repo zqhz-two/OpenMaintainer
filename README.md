@@ -57,9 +57,6 @@ openmaintainer/
 python -m venv .venv
 source .venv/bin/activate
 
-# 无外网环境可直接使用源码运行
-# （无需 pip install）
-```
 
 ### 2) 配置环境变量
 
@@ -78,13 +75,6 @@ cp .env.example .env
 ### 3) 本地运行 Demo
 
 ```bash
-PYTHONPATH=src python -m openmaintainer.runner run-issue --input scripts/demo_payloads/issue_sample.json
-PYTHONPATH=src python -m openmaintainer.runner run-pr --input scripts/demo_payloads/pr_sample.json
-PYTHONPATH=src python -m openmaintainer.runner run-docs --input scripts/demo_payloads/release_sample.json
-```
-
-运行后会在终端打印 JSON 结构化结果，可直接贴到 GitHub 评论中。
-
 ---
 
 ## GitHub Actions 集成
