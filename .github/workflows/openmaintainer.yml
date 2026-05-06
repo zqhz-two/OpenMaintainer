@@ -18,20 +18,3 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Install
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .
-
-      - name: Run issue triage demo
-        if: github.event_name == 'issues'
-        run: openmaintainer run-issue --input scripts/demo_payloads/issue_sample.json
-
-      - name: Run PR review demo
-        if: github.event_name == 'pull_request'
-        run: openmaintainer run-pr --input scripts/demo_payloads/pr_sample.json
-
-      - name: Run docs demo
-        if: github.event_name == 'workflow_dispatch'
-        run: openmaintainer run-docs --input scripts/demo_payloads/release_sample.json

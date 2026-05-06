@@ -57,8 +57,6 @@ openmaintainer/
 python -m venv .venv
 source .venv/bin/activate
 
-pip install -e .
-```
 
 ### 2) 配置环境变量
 
@@ -77,19 +75,6 @@ cp .env.example .env
 ### 3) 本地运行 Demo
 
 ```bash
-openmaintainer run-issue --input scripts/demo_payloads/issue_sample.json
-openmaintainer run-pr --input scripts/demo_payloads/pr_sample.json
-openmaintainer run-docs --input scripts/demo_payloads/release_sample.json
-```
-
-运行后会在终端打印结构化结果，可直接贴到 GitHub 评论中。
-可选：输出 Markdown 维护评论草稿
-
-```bash
-openmaintainer run-pr --input scripts/demo_payloads/pr_sample.json --format markdown
-```
-
-
 ---
 
 ## GitHub Actions 集成
