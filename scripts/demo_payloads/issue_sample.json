@@ -1,0 +1,4 @@
+{
+  "title": "Bug: API returns 500 when token expires",
+  "body": "In production we got crash after token timeout. 复现: use expired token then call /v1/items."
+}

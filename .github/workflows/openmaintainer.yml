@@ -1,0 +1,32 @@
+name: OpenMaintainer
+
+on:
+  issues:
+    types: [opened, reopened, edited]
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  openmaintainer-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run issue triage demo
+        if: github.event_name == 'issues'
+        run: PYTHONPATH=src python -m openmaintainer.runner run-issue --input scripts/demo_payloads/issue_sample.json
+
+      - name: Run PR review demo
+        if: github.event_name == 'pull_request'
+        run: PYTHONPATH=src python -m openmaintainer.runner run-pr --input scripts/demo_payloads/pr_sample.json
+
+      - name: Run docs demo
+        if: github.event_name == 'workflow_dispatch'
+        run: PYTHONPATH=src python -m openmaintainer.runner run-docs --input scripts/demo_payloads/release_sample.json

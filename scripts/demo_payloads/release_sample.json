@@ -1,0 +1,9 @@
+{
+  "features": [
+    "新增 Issue 自动分拣 Agent",
+    "新增 PR 初审与测试建议 Agent"
+  ],
+  "fixes": [
+    "修复 changelog 生成遗漏问题"
+  ]
+}
