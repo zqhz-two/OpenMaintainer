@@ -1,0 +1,9 @@
+{
+  "title": "Refactor auth checks and DB permission query",
+  "changed_files": [
+    "src/auth/middleware.py",
+    "src/db/permissions.py",
+    "src/api/routes/items.py"
+  ],
+  "ci_status": "failed"
+}
